@@ -48,6 +48,14 @@ class Api {
   getBook(id: string) {
     return this.books.find((book) => book.id === id);
   }
+
+  deleteBook(id: string) {
+    const bookIndex = this.books.findIndex((book) => book.id === id);
+
+    if (bookIndex !== -1) {
+      this.books.splice(bookIndex, 1);
+    }
+  }
 }
 
 export default new Api();

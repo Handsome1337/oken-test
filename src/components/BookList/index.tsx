@@ -4,12 +4,22 @@ import { IBook } from '../../types';
 
 interface IBookListProps {
   books: IBook[];
+  deleteBook: (id: string) => void;
 }
 
-export const BookList: React.FC<IBookListProps> = ({ books }) => {
+export const BookList: React.FC<IBookListProps> = ({ books, deleteBook }) => {
   const listItems = books.map(({ id, name }) =>
-    <BookItem key={id} name={name} id={id} />
+    <BookItem key={id} name={name} id={id} deleteBook={deleteBook} />
   );
+
+  if (!listItems.length) {
+    return (
+      <div className="d-flex align-items-center">
+        <h2 className="text-danger me-4">Книги закончились!</h2>
+        <button className="btn btn-primary" onClick={() => location.reload()}>Перезагрузить</button>
+      </div>
+    )
+  }
 
   return (
     <ul className="list-group">
