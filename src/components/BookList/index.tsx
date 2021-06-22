@@ -1,4 +1,5 @@
 import React from 'react';
+import { BookItem } from "../BookItem";
 import { IBook } from '../../types';
 
 interface IBookListProps {
@@ -7,7 +8,7 @@ interface IBookListProps {
 
 export const BookList: React.FC<IBookListProps> = ({ books }) => {
   const listItems = books.map(({ id, name }) =>
-    <li key={id} className="list-group-item list-group-item-action">{name}</li>
+    <BookItem key={id} name={name} />
   );
 
   return (
