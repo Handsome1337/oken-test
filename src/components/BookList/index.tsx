@@ -22,7 +22,7 @@ export const BookList: React.FC<IBookListProps> = ({ books, deleteBook }) => {
   }
 
   return (
-    <ul className="list-group">
+    <ul className="list-group mb-3">
       {listItems}
     </ul>
   )
