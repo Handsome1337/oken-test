@@ -1,7 +1,7 @@
 import { nanoid } from 'nanoid';
 import { IBook } from '../types';
 
-export default class Api {
+class Api {
   private books: IBook[] = [
     {
       id: nanoid(),
@@ -49,3 +49,5 @@ export default class Api {
     return this.books.find((book) => book.id === id);
   }
 }
+
+export default new Api();

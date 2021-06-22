@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import Api from '../../api';
+import { NotFound } from '../NotFound';
+import { BackButton } from '../BackButton';
+import api from '../../api';
 
 interface IRouteParams {
   id: string;
@@ -8,10 +10,11 @@ interface IRouteParams {
 
 export const BookInfo: React.FC = () => {
   const { id } = useParams<IRouteParams>();
-  const book = new Api().getBook(id);
+  const book = api.getBook(id);
+
 
   if (!book) {
-    return <h2 className="text-danger">Книга не найдена!</h2>;
+    return <NotFound text="Книга не найдена!" />
   }
 
   const { name, description, year } = book;
@@ -23,7 +26,7 @@ export const BookInfo: React.FC = () => {
           {name}&nbsp;
           <span className="fst-italic fw-light">{year}</span>
         </h2>
-        <a className="btn btn-primary">Назад</a>
+        <BackButton />
       </div>
       <p className="fs-4">{description}</p>
     </section>
