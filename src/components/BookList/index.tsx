@@ -8,7 +8,7 @@ interface IBookListProps {
 
 export const BookList: React.FC<IBookListProps> = ({ books }) => {
   const listItems = books.map(({ id, name }) =>
-    <BookItem key={id} name={name} />
+    <BookItem key={id} name={name} id={id} />
   );
 
   return (

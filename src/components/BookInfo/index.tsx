@@ -1,11 +1,21 @@
 import React from 'react';
-import { IBook } from '../../types';
+import { useParams } from 'react-router-dom';
+import Api from '../../api';
 
-interface IBookInfoProps {
-  book: IBook;
+interface IRouteParams {
+  id: string;
 }
 
-export const BookInfo: React.FC<IBookInfoProps> = ({ book: { name, description, year } }) => {
+export const BookInfo: React.FC = () => {
+  const { id } = useParams<IRouteParams>();
+  const book = new Api().getBook(id);
+
+  if (!book) {
+    return <h2 className="text-danger">Книга не найдена!</h2>;
+  }
+
+  const { name, description, year } = book;
+
   return (
     <section>
       <div className="d-flex justify-content-between align-items-center">
