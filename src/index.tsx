@@ -1,4 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { App } from './components/App';
 
-ReactDOM.render(<h1>Hello Oken</h1>, document.querySelector('main'));
+ReactDOM.render(<App />, document.querySelector('main'));
