@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookItem } from "../BookItem";
+import BookItem from '../BookItem';
 import { IBook } from '../../types';
 
 interface IBookListProps {
@@ -7,7 +7,7 @@ interface IBookListProps {
   deleteBook: (id: string) => void;
 }
 
-export const BookList: React.FC<IBookListProps> = ({ books, deleteBook }) => {
+const BookList: React.FC<IBookListProps> = ({ books, deleteBook }) => {
   const listItems = books.map(({ id, name, year }) =>
     <BookItem key={id} name={name} id={id} year={year} deleteBook={deleteBook} />
   );
@@ -27,3 +27,5 @@ export const BookList: React.FC<IBookListProps> = ({ books, deleteBook }) => {
     </ul>
   )
 };
+
+export default BookList;

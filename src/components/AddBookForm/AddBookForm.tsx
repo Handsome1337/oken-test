@@ -1,7 +1,7 @@
 import React from 'react';
 import { IBook } from '../../types';
 
-export interface IFormFields {
+interface IFormFields {
   name: { value: string; };
   year: { value: string; };
   description: { value: string; };
@@ -11,7 +11,7 @@ interface IAddBookFormProps {
   addBook: (book: Omit<IBook, 'id'>) => void;
 }
 
-export const AddBookForm: React.FC<IAddBookFormProps> = ({ addBook }) => {
+const AddBookForm: React.FC<IAddBookFormProps> = ({ addBook }) => {
   const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     const target = evt.target as typeof evt.target & IFormFields;
@@ -34,3 +34,5 @@ export const AddBookForm: React.FC<IAddBookFormProps> = ({ addBook }) => {
     </form>
   )
 };
+
+export default AddBookForm;

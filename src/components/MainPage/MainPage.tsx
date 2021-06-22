@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { BookList } from '../BookList';
-import { AddBookForm } from '../AddBookForm';
+import BookList from '../BookList';
+import AddBookForm from '../AddBookForm';
 import api from '../../api';
-import { IBook } from '../../types';
+import { IBook } from '../../types'
 
-export const MainPage: React.FC = () => {
+const MainPage: React.FC = () => {
   const [books, setBooks] = useState(api.getAllBooks());
   const [isAddModeOpen, setIsAddModeOpen] = useState(false);
 
@@ -37,3 +37,5 @@ export const MainPage: React.FC = () => {
     </>
   )
 };
+
+export default MainPage;

@@ -8,7 +8,7 @@ interface IBookItemProps {
   deleteBook: (id: string) => void;
 }
 
-export const BookItem: React.FC<IBookItemProps> = ({ name, id, year, deleteBook } ) => {
+const BookItem: React.FC<IBookItemProps> = ({ name, id, year, deleteBook } ) => {
   return (
     <li className="list-group-item list-group-item-action d-flex align-items-center">
       {name}&nbsp;
@@ -20,3 +20,5 @@ export const BookItem: React.FC<IBookItemProps> = ({ name, id, year, deleteBook 
     </li>
   )
 };
+
+export default BookItem;

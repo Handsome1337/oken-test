@@ -1,6 +1,5 @@
-export interface IBook {
-  id: string;
-  name: string;
-  description: string;
-  year: number;
+import IBook from './book';
+
+export {
+  IBook
 }

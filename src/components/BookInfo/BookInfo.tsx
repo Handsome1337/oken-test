@@ -1,14 +1,14 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { NotFound } from '../NotFound';
-import { BackButton } from '../BackButton';
+import NotFound from '../NotFound';
+import BackButton from '../BackButton';
 import api from '../../api';
 
 interface IRouteParams {
   id: string;
 }
 
-export const BookInfo: React.FC = () => {
+const BookInfo: React.FC = () => {
   const { id } = useParams<IRouteParams>();
   const book = api.getBook(id);
 
@@ -32,3 +32,5 @@ export const BookInfo: React.FC = () => {
     </section>
   )
 };
+
+export default BookInfo;
