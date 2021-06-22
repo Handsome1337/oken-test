@@ -24,7 +24,7 @@ const BookInfo: React.FC = () => {
       <div className="d-flex justify-content-between align-items-center">
         <h2>
           {name}&nbsp;
-          <span className="fst-italic fw-light">{year}</span>
+          <span className="fst-italic fw-light">({year})</span>
         </h2>
         <BackButton />
       </div>
