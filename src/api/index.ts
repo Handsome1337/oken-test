@@ -56,6 +56,15 @@ class Api {
       this.books.splice(bookIndex, 1);
     }
   }
+
+  addBook(book: Omit<IBook, 'id'>) {
+    const newBook = {
+      id: nanoid(),
+      ...book
+    };
+
+    this.books.push(newBook);
+  }
 }
 
 export default new Api();
