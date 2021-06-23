@@ -59,6 +59,10 @@ class Api {
 
     this.books.push(newBook);
   }
+
+  findBooksByDescription(description: string) {
+    return this.books.filter((book) => book.description.toLowerCase().includes(description.toLowerCase()));
+  }
 }
 
 export default new Api();

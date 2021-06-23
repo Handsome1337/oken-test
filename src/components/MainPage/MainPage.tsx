@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Search from '../Search';
 import BookList from '../BookList';
 import AddBookForm from '../AddBookForm';
 import api from '../../api';
@@ -31,6 +32,7 @@ const MainPage: React.FC = () => {
 
   return (
     <>
+      <Search />
       <BookList books={books} deleteBook={deleteBook} />
       {addBookButton}
       {addBookForm}
